@@ -2,3 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+.button-color {
+    color: white;
+}
+
+.bg-color-white {
+    background-color: white;
+}
+
+.h2-size {
+    font-size: 2.25rem; /* 36px */
+    line-height: 2.5rem; /* 40px */
+}
+
+.img-size {
+    width: 225px;
+    height: 300px;
+}
+
+.full-circle {
+    width: 650px;
+    height: 650px;
+}
