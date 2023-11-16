@@ -1,5 +1,5 @@
 export const dynamic = "force-dynamic"
-
+import Step1 from "./components/Step-1";
 
 export default async function Home() {
   let apikey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZoaXhzeXp4YnB6Z3B4cHpudHptIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTY4NTE4NDksImV4cCI6MjAxMjQyNzg0OX0.IvgRa_9DEACdC_JrbcaISdRXZWVheM1r43xIkuDmcag";
@@ -20,18 +20,13 @@ export default async function Home() {
        
       
       
-       
+      
+      let genders = [...new Set(data.map(item => item.gender))];
 
-    return(
-        <>
-        {data.map((product)=>(
-            <>
-            <p>{product.id}</p>
-            <p>{product.navn}</p>
-            </>
-            
-        ))}
-        </>
+      return(
+        <main className="h-full w-full flex justify-center items-center">
         
-    )
-}
+        <Step1  genders={genders}/>
+
+    </main>
+)}
