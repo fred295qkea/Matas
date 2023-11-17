@@ -1,4 +1,8 @@
+import FormSteps from "./components/FormSteps";
+
 export const dynamic = "force-dynamic"
+
+
 
 
 export default async function Home() {
@@ -24,13 +28,19 @@ export default async function Home() {
 
     return(
         <>
+<FormSteps />
+
         {data.map((product)=>(
             <>
             <p>{product.id}</p>
             <p>{product.navn}</p>
+
+    
             </>
             
         ))}
+
+        
         </>
         
     )
