@@ -1,5 +1,9 @@
+import FormSteps from "./components/FormSteps";
+
 export const dynamic = "force-dynamic"
 import Step1 from "./components/Step-1";
+
+
 
 export default async function Home() {
   let apikey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZoaXhzeXp4YnB6Z3B4cHpudHptIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTY4NTE4NDksImV4cCI6MjAxMjQyNzg0OX0.IvgRa_9DEACdC_JrbcaISdRXZWVheM1r43xIkuDmcag";
