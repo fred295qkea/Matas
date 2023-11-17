@@ -26,7 +26,7 @@ export default async function Home() {
       return(
         <main className="h-full w-full flex justify-center items-center">
         
-        <Step1  genders={genders}/>
+        <Step1 data={data}  genders={genders}/>
 
     </main>
 )}
