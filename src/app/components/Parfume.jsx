@@ -1,14 +1,22 @@
-import Image from "next/image"
-export default function arfume(){
-    return(
-        <div className="flex flex-col items-center justify-around">
-            <Image className=" h-28 md:h-28rounded-full p-4 bg-matas-200"
-            src="public/next.svg"
-            width="100"
-            height="100"
-            alt="paco" />
+import Image from "next/image";
 
-            <h2 className="text-center">paco 1 million</h2>
-        </div>
-    )
+export default function Parfume(props) {
+  return (
+    <>
+      {/* {genders.map((gender, index) => ( */}
+        <button onClick={()=>props.setType(props.gender)}  className="transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 hover:bg-mantas-200 duration-200 ... flex flex-col items-center justify-around m-4">
+          <Image
+            className="h-28 md:h-28 rounded-full p-4 bg-matas-200"
+            src="/next.svg" // Assuming next.svg is in the public directory
+            width={100}
+            height={100}
+            alt="paco"
+          />
+          <h2 className="text-center" >
+             {props.gender} 
+          </h2>
+        </button>
+      {/* // ))} */}
+    </>
+  );
 }

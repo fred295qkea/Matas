@@ -1,4 +1,9 @@
+import FormSteps from "./components/FormSteps";
+
 export const dynamic = "force-dynamic"
+import Step1 from "./components/Step-1";
+import Step2 from "./components/Step-2";
+
 
 
 export default async function Home() {
@@ -16,22 +21,18 @@ export default async function Home() {
        });
        
         let data = await response.json();
-       console.log(data);
+       //console.log(data);
        
       
       
-       
+      
+      //let genders = [...new Set(data.map(item => item.gender))];
 
-    return(
-        <>
-        {data.map((product)=>(
-            <>
-            <p>{product.id}</p>
-            <p>{product.navn}</p>
-            </>
-            
-        ))}
-        </>
+      return(
+        <main className="h-full w-full flex justify-center items-center">
         
-    )
-}
+        <FormSteps data={data} />
+        {/* <Step1 data={data}  genders={genders}/> */}
+
+    </main>
+)}
