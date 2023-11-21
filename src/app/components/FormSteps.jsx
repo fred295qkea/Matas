@@ -1,31 +1,61 @@
 "use client"
 
+import Button from "./Button"
+
 import { useState } from "react"
 
-function FormSteps() {
+function FormSteps(props) {
 
     const [currentStep, setCurrentStep] = useState(0)
+   
+    // de useState vi bruger til at filtrere 
+    const [aarstid, setAarstid] = useState("");
+    const [type, setType] = useState("");
 
+    let doneData = props.data;
+    if (type) {
+        doneData = props.data.filter((e)=>e.gender === type)
+    }
+    if(aarstid) {
+        doneData = doneData.filter((e)=>e.aarstid.includes(aarstid));
+    }
     const steps = [
     {
         id: "step 1",
-        name: "Type"
+        name: "Type",
+        content:  <div>
+        <button onClick={()=>setType("men")}>Mænd</button>
+        <button onClick={()=>setType("women")}>Kvinder</button> 
+        <button onClick={()=>setType("unisex")}>Unisex</button> 
+        <h1>{type}</h1>
+        </div>
+        
     },
     {
         id: "step 2",
-        name: "Season"
+        name: "Season",
+        content:  <div>
+        <button onClick={()=>setAarstid("summer")}>Sommer</button>
+        <button onClick={()=>setAarstid("spring")}>Forår</button> 
+        <button onClick={()=>setAarstid("winter")}>Vinter</button>
+        <button onClick={()=>setAarstid("fall")}>Efterår</button>
+        <h1>{aarstid}</h1>
+        </div>
     },
     {
         id: "step 3",
-        name: "Smell"
+        name: "Smell",
+        content:  <button onClick={()=> console.log(doneData)}>klik</button>
     },
     {
         id: "step 4",
-        name: "tease"
+        name: "tease",
+        content: <p>hejsa</p>
     },
     {
         id:"step 5",
-        name: "result"
+        name: "result",
+        content: <p>hejsa</p>
     }
     ]
 
@@ -48,17 +78,15 @@ function FormSteps() {
             ))}
         </ul>
 
-        {currentStep === 0 && <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat ducimus repellendus error nisi tenetur sapiente blanditiis expedita obcaecati numquam unde! Quia tenetur expedita soluta. Voluptatum amet eos impedit itaque consequatur?</p>}
-        {currentStep === 1 && <p>hejsa</p>}
-
-        {currentStep === 2 && <h2 className="bg-white">Step 3</h2>}
+                {steps[currentStep].content}
 
         
-        {currentStep === 0 ? <button>Prev</button> : <button onClick={()=>(setCurrentStep(oldStep => oldStep-1))}>Prev</button>}
+       
 
-        
-        
-        {currentStep === steps.length ? <button>Next</button> : <button onClick={()=>(setCurrentStep(oldStep => oldStep+1))}>next</button>}
+        {currentStep === 0 ? <Button desc="left"/>:  <Button desc="left" setCurrentStep={setCurrentStep} currentStep={currentStep}/>}
+
+        {currentStep === 4 ? <Button desc="right" /> : <Button desc="right" setCurrentStep={setCurrentStep} currentStep={currentStep}/>
+}
 
 
     </div>
