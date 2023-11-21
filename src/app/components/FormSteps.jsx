@@ -3,6 +3,8 @@
 import Button from "./Button"
 
 import { useState } from "react"
+import Step1 from "./Step-1";
+import Step2 from "./Step-2";
 
 function FormSteps(props) {
 
@@ -24,10 +26,12 @@ function FormSteps(props) {
         id: "step 1",
         name: "Type",
         content:  <div>
-        <button onClick={()=>setType("men")}>Mænd</button>
+        {/* <button onClick={()=>setType("men")}>Mænd</button>
         <button onClick={()=>setType("women")}>Kvinder</button> 
-        <button onClick={()=>setType("unisex")}>Unisex</button> 
+        <button onClick={()=>setType("unisex")}>Unisex</button>  */}
         <h1>{type}</h1>
+        <Step1 data={props.data} setType={setType}/>
+        
         </div>
         
     },
@@ -40,6 +44,7 @@ function FormSteps(props) {
         <button onClick={()=>setAarstid("winter")}>Vinter</button>
         <button onClick={()=>setAarstid("fall")}>Efterår</button>
         <h1>{aarstid}</h1>
+        <Step2/>
         </div>
     },
     {
