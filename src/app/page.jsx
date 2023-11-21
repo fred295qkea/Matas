@@ -20,17 +20,18 @@ export default async function Home() {
        });
        
         let data = await response.json();
-       console.log(data);
+       //console.log(data);
        
       
       
       
-      let genders = [...new Set(data.map(item => item.gender))];
+      //let genders = [...new Set(data.map(item => item.gender))];
 
       return(
         <main className="h-full w-full flex justify-center items-center">
         
-        <Step1 data={data}  genders={genders}/>
+        <FormSteps data={data} />
+        {/* <Step1 data={data}  genders={genders}/> */}
 
     </main>
 )}

@@ -4,25 +4,48 @@ import Button from "./Button"
 
 import { useState } from "react"
 
-function FormSteps() {
+function FormSteps(props) {
 
     const [currentStep, setCurrentStep] = useState(0)
+   
+    // de useState vi bruger til at filtrere 
+    const [aarstid, setAarstid] = useState("");
+    const [type, setType] = useState("");
 
+    let doneData = props.data;
+    if (type) {
+        doneData = props.data.filter((e)=>e.gender === type)
+    }
+    if(aarstid) {
+        doneData = doneData.filter((e)=>e.aarstid.includes(aarstid));
+    }
     const steps = [
     {
         id: "step 1",
         name: "Type",
-        content: <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat ducimus repellendus error nisi tenetur sapiente blanditiis expedita obcaecati numquam unde! Quia tenetur expedita soluta. Voluptatum amet eos impedit itaque consequatur?</p>
+        content:  <div>
+        <button onClick={()=>setType("men")}>Mænd</button>
+        <button onClick={()=>setType("women")}>Kvinder</button> 
+        <button onClick={()=>setType("unisex")}>Unisex</button> 
+        <h1>{type}</h1>
+        </div>
+        
     },
     {
         id: "step 2",
         name: "Season",
-        content: <p>hejsa</p>
+        content:  <div>
+        <button onClick={()=>setAarstid("summer")}>Sommer</button>
+        <button onClick={()=>setAarstid("spring")}>Forår</button> 
+        <button onClick={()=>setAarstid("winter")}>Vinter</button>
+        <button onClick={()=>setAarstid("fall")}>Efterår</button>
+        <h1>{aarstid}</h1>
+        </div>
     },
     {
         id: "step 3",
         name: "Smell",
-        content: <p>hejsa casper</p>
+        content:  <button onClick={()=> console.log(doneData)}>klik</button>
     },
     {
         id: "step 4",
