@@ -13,7 +13,7 @@ let genders = ["men","women","unisex"];
         {genders.map((gender)=>(
             <Parfume key={gender} setType={props.setType} gender={gender}/> 
         ))}
-         
+       
          </div> 
         
         <p className="text-center">steps</p>

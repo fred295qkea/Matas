@@ -39,12 +39,12 @@ function FormSteps(props) {
         id: "step 2",
         name: "Season",
         content:  <div>
-        <button onClick={()=>setAarstid("summer")}>Sommer</button>
+        {/*<button onClick={()=>setAarstid("summer")}>Sommer</button>
         <button onClick={()=>setAarstid("spring")}>Forår</button> 
         <button onClick={()=>setAarstid("winter")}>Vinter</button>
-        <button onClick={()=>setAarstid("fall")}>Efterår</button>
+    <button onClick={()=>setAarstid("fall")}>Efterår</button> */}
         <h1>{aarstid}</h1>
-        <Step2/>
+        <Step2 data={props.data} setAarstid={setAarstid}/>
         </div>
     },
     {
