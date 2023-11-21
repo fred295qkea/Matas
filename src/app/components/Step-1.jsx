@@ -11,7 +11,7 @@ export default function Step1(props) {
         </section>
 
 
-        {props.data.map(d=><p>{d.navn}</p>)}
+       {/* {props.data.map(d=><p>{d.navn}</p>)} */}
         </>
     )
 
