@@ -5,7 +5,7 @@ import Button from "./Button"
 import { useState } from "react"
 import Step1 from "./Step-1";
 import Step2 from "./Step-2";
-
+import Step3 from "./Step-3";
 function FormSteps(props) {
 
     const [currentStep, setCurrentStep] = useState(0)
@@ -50,7 +50,10 @@ function FormSteps(props) {
     {
         id: "step 3",
         name: "Smell",
-        content:  <button onClick={()=> console.log(doneData)}>klik</button>
+        content:  <>
+        <button onClick={()=> console.log(doneData)}>klik</button>
+        <Step3 doneData={doneData}/>
+        </> 
     },
     {
         id: "step 4",
