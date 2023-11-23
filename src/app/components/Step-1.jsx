@@ -4,14 +4,14 @@ export default function Step1(props) {
 let genders = ["men","women","unisex"];
     return(
         <>
-        <section className="w-11/12 md:w-10/12 lg:w-3/5 grid  h-4/5 bg-mantas-100 p-3 rounded-2xl shadow-lg">
+        <section className="grid w-9/12 p-3 m-auto shadow-lg min-h-[80%] bg-mantas-100 rounded-2xl">
         <h1 className="text-center">Hvem er det til ?</h1>
-         <div className="flex justify-around items-center gap-6 m-8 flex-wrap"> 
+         <div className="flex flex-wrap items-center justify-around gap-6 m-8"> 
          {/* <button onClick={()=>props.setType("men")}>Mænd</button>
         <button onClick={()=>props.setType("women")}>Kvinder</button> 
         <button onClick={()=>props.setType("unisex")}>Unisex</button>  */}
         {genders.map((gender)=>(
-            <Parfume key={gender} setType={props.setType} gender={gender}/> 
+            <Parfume key={gender} setType={props.setType} type={props.type} gender={gender}/> 
         ))}
        
          </div> 

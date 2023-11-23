@@ -30,7 +30,7 @@ function FormSteps(props) {
         <button onClick={()=>setType("women")}>Kvinder</button> 
         <button onClick={()=>setType("unisex")}>Unisex</button>  */}
         <h1>{type}</h1>
-        <Step1 data={props.data} setType={setType}/>
+        <Step1 data={props.data} type={type} setType={setType}/>
         
         </div>
         
