@@ -82,8 +82,7 @@ function FormSteps(props) {
                 key={step.id} 
                 className={`list-none p-4 rounded-full`}
                 animate={{ backgroundColor: currentStep >= index ? '#44BDEE' : '#8893A8' }}
-            >
-                
+            >   
             </motion.li>
             {index < steps.length - 1 && 
                 <motion.div 
