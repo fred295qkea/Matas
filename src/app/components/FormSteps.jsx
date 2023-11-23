@@ -13,13 +13,20 @@ function FormSteps(props) {
     // de useState vi bruger til at filtrere 
     const [aarstid, setAarstid] = useState("");
     const [type, setType] = useState("");
+    const [finalId, setFinalId] = useState("");
 
     let doneData = props.data;
+    let finalProduct;
     if (type) {
-        doneData = props.data.filter((e)=>e.gender === type)
+        doneData = props.data.filter((e)=>e.gender === type);
     }
     if(aarstid) {
         doneData = doneData.filter((e)=>e.aarstid.includes(aarstid));
+       
+    }
+    if(finalId){
+        finalProduct = doneData.filter((e)=>e.id === finalId);
+        
     }
     const steps = [
     {
@@ -51,14 +58,20 @@ function FormSteps(props) {
         id: "step 3",
         name: "Smell",
         content:  <>
-        <button onClick={()=> console.log(doneData)}>klik</button>
-        <Step3 doneData={doneData}/>
+        <h1>{finalId}</h1>
+        
+        <Step3 setFinalId={setFinalId} doneData={doneData}/>
         </> 
     },
     {
         id: "step 4",
         name: "tease",
-        content: <p>hejsa</p>
+        content:
+        <>
+        <img src={finalProduct?"/matas-scent/"+finalProduct[0].billede:""} alt="" />
+        <p>{ finalProduct? finalProduct[0].id: ""}</p>
+        {<p>{console.log(finalProduct)}</p>}
+        </> 
     },
     {
         id:"step 5",
