@@ -83,7 +83,7 @@ function FormSteps(props) {
 
 
   return (
-    <div className=" bg-mantas-100 rounded-2xl shadow-lg p-10 m-5 grid gap-10 ">
+    <div className="w-4/5 min-h-[80%] bg-mantas-100 rounded-2xl shadow-lg p-10 m-5 grid gap-10 ">
 
                 {steps[currentStep].content}
 
