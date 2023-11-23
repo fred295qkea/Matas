@@ -17,6 +17,8 @@ function FormSteps(props) {
     const [type, setType] = useState("");
     const [finalId, setFinalId] = useState("");
 
+    const [showc, setShowc] = useState("");
+
     let doneData = props.data;
     let finalProduct;
     if (type) {
@@ -67,7 +69,7 @@ function FormSteps(props) {
         name: "tease",
         content:
         <>
-        <Result finalProduct={finalProduct}/>
+        <Result setShowc={setShowc} showc={showc} finalProduct={finalProduct}/>
 
         {/* <Image
                 className={`  rounded-xl  bg-matas-200 }`}
@@ -85,37 +87,45 @@ function FormSteps(props) {
 
 
   return (
+    <>  
+    {/* <div onClick={()=> setShowc("show")}  className={"animation-result "+showc} >
+        <p>Tryk for at se den perfekte parfume</p>
+    </div> */}
     <div className="w-4/5 min-h-[80%] bg-mantas-100 rounded-2xl shadow-lg p-10 m-5 grid gap-10 ">
 
-                {steps[currentStep].content}
+{steps[currentStep].content}
 
-        
-                <div className="flex items-center">
-    {steps.map((step, index) => (
-        <>
-            <motion.li 
-                key={step.id} 
-                className={`list-none p-4 rounded-full`}
-                animate={{ backgroundColor: currentStep >= index ? '#44BDEE' : '#8893A8' }}
-            >   
-            </motion.li>
-            {index < steps.length - 1 && 
-                <motion.div 
-                    className={`h-1 flex-grow `}
-                    animate={{ backgroundColor: currentStep > index ? '#44BDEE' : '#8893A8' }}
-                ></motion.div>
-            }
-        </>
-    ))}
-</div>
-        <div className="flex justify-between">
-        {currentStep === 0 ? <Button desc="left"/>:  <Button desc="left" setCurrentStep={setCurrentStep} currentStep={currentStep}/>}
-
-        {currentStep === 3 ? <Button desc="right" /> : <Button desc="right" setCurrentStep={setCurrentStep} currentStep={currentStep}/>
+<div className="flex items-center">
+{steps.map((step, index) => (
+<>
+<motion.li 
+key={step.id} 
+className={`list-none p-4 rounded-full`}
+animate={{ backgroundColor: currentStep >= index ? '#44BDEE' : '#8893A8' }}
+>   
+</motion.li>
+{index < steps.length - 1 && 
+<motion.div 
+    className={`h-1 flex-grow `}
+    animate={{ backgroundColor: currentStep > index ? '#44BDEE' : '#8893A8' }}
+></motion.div>
 }
-        </div>
+</>
+))}
+</div>
+<div className="flex justify-between">
+{currentStep === 0 ? <Button desc="left"/>:  <Button desc="left" setCurrentStep={setCurrentStep} currentStep={currentStep}/>}
 
-    </div>
+{currentStep === 3 ? <Button desc="right" /> : <Button desc="right" setCurrentStep={setCurrentStep} currentStep={currentStep}/>
+
+}
+
+</div>
+
+</div>
+    
+    </>
+    
   )
 }
 

@@ -2,8 +2,11 @@ import Image from "next/image"
 
 export default function Result(props) {
     return(
-        <div className="flex items-center justify-center">
-            <div className=" grid grid-cols-2">
+        <div className=" result-see-container flex items-center justify-center">
+             <div onClick={()=> props.setShowc("show")}  className={"result-see "+props.showc} >
+                <p>Klik og find den perfekte parfume</p>
+                    </div>
+            <div className=" grid md:grid-cols-2 gap-4 ">
                 <div className="flex justify-around">
                     <div className="">
                     <Image
@@ -16,19 +19,21 @@ export default function Result(props) {
                     </div>
                 </div>
                 
-                <div className="flex gap-4 items-center flex-col justify-between">
+                <div className="  flex gap-4 items-center flex-col justify-between">
+                   
                         <h2 className="text-3xl">{props.finalProduct[0].navn} af {props.finalProduct[0].brand} </h2>
                         <div className="flex gap-3">
                             <p><strong>Duftnoter:</strong></p>
                             {props.finalProduct[0].duft.map((e)=>{
-                              return(<p key={e} className="text-l">{e}</p>)  
+                              return(<p key={e} className="">{e}</p>)  
                             })}
                         </div>
                         <p>Pris: {props.finalProduct[0].pris}kr.</p>
                         <div className="flex gap-4">
                         <button className="bg-mantas-500 px-8 py-3 rounded-full text-white text-lg hover:scale-110 transition-transform duration-200">Læg i kurv</button> 
                         <button className="bg-mantas-400 px-8 py-3 rounded-full text-white text-lg hover:scale-110 transition-transform duration-200"> Læs mere</button>
-                    </div>
+                        </div>
+                    
                 </div>
 
             </div>

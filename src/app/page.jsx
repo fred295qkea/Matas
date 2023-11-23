@@ -29,9 +29,14 @@ export default async function Home() {
       //let genders = [...new Set(data.map(item => item.gender))];
 
       return(
+        <>
+        
         <main className="h-full w-full flex justify-center items-center">
         
         <FormSteps data={data} className=""/>
 
-    </main>
+        </main>
+        
+        </>
+        
 )}
