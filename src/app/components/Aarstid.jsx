@@ -17,8 +17,8 @@ export default function Aarstid(props) {
           {/* <Image
             className="h-28 md:h-28 rounded-full p-4 bg-matas-200"
             src="/next.svg" // Assuming next.svg is in the public directory
-            width={100}
-            height={100}
+            width={150}
+            height={150}
             alt="paco"
             /> */}
             <p className="text-8xl">{props.aarstid.emoji}</p>

@@ -9,7 +9,7 @@ export default function Step2(props) {
             <h1 className="text-center">Hvilken årstid passer bedst til den parfume, du ønsker ?</h1>
             <div className="flex justify-around items-center gap-5 m-8 flex-wrap"> 
             {aarstider.map((aarstid)=>(
-            <Aarstid key={aarstid} setFinalId={props.setFinalId} setAarstid={props.setAarstid} aarstid={aarstid}/> 
+            <Aarstid key={aarstid} setAarstid={props.setAarstid} stateAarstid={props.stateAarstid} aarstid={aarstid}/> 
         ))}
             </div>
         </section>

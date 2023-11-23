@@ -6,6 +6,7 @@ import { useState } from "react"
 import Step1 from "./Step-1";
 import Step2 from "./Step-2";
 import Step3 from "./Step-3";
+import Image from "next/image";
 function FormSteps(props) {
 
     const [currentStep, setCurrentStep] = useState(0)
@@ -33,9 +34,6 @@ function FormSteps(props) {
         id: "step 1",
         name: "Type",
         content:  <div>
-        {/* <button onClick={()=>setType("men")}>Mænd</button>
-        <button onClick={()=>setType("women")}>Kvinder</button> 
-        <button onClick={()=>setType("unisex")}>Unisex</button>  */}
         <h1>{type}</h1>
         <Step1 setFinalId={setFinalId} data={props.data} setType={setType}/>
         
@@ -60,7 +58,7 @@ function FormSteps(props) {
         content:  <>
         <h1>{finalId}</h1>
         
-        <Step3 setFinalId={setFinalId} doneData={doneData}/>
+        <Step3 setFinalId={setFinalId} finalId={finalId} doneData={doneData}/>
         </> 
     },
     {
@@ -68,15 +66,17 @@ function FormSteps(props) {
         name: "tease",
         content:
         <>
-        <img src={finalProduct?"/matas-scent/"+finalProduct[0].billede:""} alt="" />
+
+        <Image
+                className={`  rounded-xl  bg-matas-200 }`}
+                src={finalProduct?"/matas-scent/"+finalProduct[0].billede:""}// Assuming next.svg is in the public directory
+                width={200}
+                height={200}
+                alt="paco"
+            />
         <p>{ finalProduct? finalProduct[0].id: ""}</p>
         {<p>{console.log(finalProduct)}</p>}
         </> 
-    },
-    {
-        id:"step 5",
-        name: "result",
-        content: <p>hejsa</p>
     }
     ]
 
