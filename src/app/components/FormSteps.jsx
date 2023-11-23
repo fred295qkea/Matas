@@ -106,10 +106,10 @@ function FormSteps(props) {
         </>
     ))}
 </div>
-        <div>
+        <div className="flex justify-between md:p-6">
         {currentStep === 0 ? <Button desc="left"/>:  <Button desc="left" setCurrentStep={setCurrentStep} currentStep={currentStep}/>}
 
-        {currentStep === 4 ? <Button desc="right" /> : <Button desc="right" setCurrentStep={setCurrentStep} currentStep={currentStep}/>
+        {currentStep === 3 ? <Button desc="right" /> : <Button desc="right" setCurrentStep={setCurrentStep} currentStep={currentStep}/>
 }
         </div>
 
