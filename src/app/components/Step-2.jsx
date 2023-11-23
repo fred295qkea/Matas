@@ -7,7 +7,7 @@ export default function Step2(props) {
         <section className=" grid gap-10">
             
             <h1 className="text-center">Hvilken årstid passer bedst til den parfume, du ønsker ?</h1>
-            <div className="flex justify-around items-center gap-5 m-8 flex-wrap"> 
+            <div className="flex justify-around items-center gap-7 m-8 flex-wrap"> 
             {aarstider.map((aarstid)=>(
             <Aarstid key={aarstid} setAarstid={props.setAarstid} stateAarstid={props.stateAarstid} setFinalId={props.setFinalId} aarstid={aarstid}/> 
         ))}

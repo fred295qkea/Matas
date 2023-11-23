@@ -5,9 +5,9 @@ let genders = ["men","women","unisex"];
     return(
         <section className=" grid gap-10 ">
         <h1 className="text-center">Hvem er det til ?</h1>
-         <div className="flex justify-around items-center gap-6 m-8 flex-wrap"> 
+         <div className="flex justify-around items-center  gap-7 m-8 flex-wrap"> 
         {genders.map((gender)=>(
-            <Parfume key={gender} setFinalId={ props.setFinalId} setType={props.setType} gender={gender}/> 
+            <Parfume key={gender} setFinalId={ props.setFinalId} type={props.type} setType={props.setType} gender={gender}/> 
         ))}
          </div> 
         </section>
