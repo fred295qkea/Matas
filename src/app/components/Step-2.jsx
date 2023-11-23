@@ -1,19 +1,19 @@
 import Aarstid from "./Aarstid"
 
 export default function Step2(props) {
-    let aarstider = ["summer", "winter", "autumn", "fall"];
+    let aarstider = ["summer", "winter", "spring", "fall"];
 
     return(
-        <>
-        <section className="w-11/12 md:w-10/12 lg:w-3/5 grid  h-4/5 bg-mantas-100 p-3 rounded-2xl shadow-lg">
+        <section className=" grid gap-10">
+            
             <h1 className="text-center">Hvilken årstid passer bedst til den parfume, du ønsker ?</h1>
+            <div className="flex justify-around items-center gap-5 m-8 flex-wrap"> 
             {aarstider.map((aarstid)=>(
             <Aarstid key={aarstid} setAarstid={props.setAarstid} aarstid={aarstid}/> 
         ))}
-        
-            <p className="text-center">steps</p>
+            </div>
         </section>
-        </>
+ 
     )
 
     }

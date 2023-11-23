@@ -1,10 +1,25 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion"
+import { useState } from "react";
 
 export default function Parfume(props) {
+    const [clicked, setClicked] = useState(false);
+  
+    const handleClick = () => {
+      setClicked(!clicked);
+      props.setType(props.gender);
+    };
   return (
-    <>
-      {/* {genders.map((gender, index) => ( */}
-        <button onClick={()=>props.setType(props.gender)}  className="transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 hover:bg-mantas-200 duration-200 ... flex flex-col items-center justify-around m-4">
+        <motion.button 
+        
+        whileHover={{ scale: 1.2 }}
+        whileTap={{ scale: 1 }}
+        style={{border:`2px solid ${clicked ? "#44BDEE" : "transparent"}`}}
+
+        onClick={handleClick}  className="flex flex-col items-center justify-around rounded-full p-3">
+
           <Image
             className="h-28 md:h-28 rounded-full p-4 bg-matas-200"
             src="/next.svg" // Assuming next.svg is in the public directory
@@ -15,8 +30,6 @@ export default function Parfume(props) {
           <h2 className="text-center" >
              {props.gender} 
           </h2>
-        </button>
-      {/* // ))} */}
-    </>
+        </motion.button>
   );
 }

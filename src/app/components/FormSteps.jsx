@@ -1,7 +1,7 @@
 "use client"
 
 import Button from "./Button"
-
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react"
 import Step1 from "./Step-1";
 import Step2 from "./Step-2";
@@ -70,32 +70,36 @@ function FormSteps(props) {
 
 
   return (
-    <div>
-        <ul role="list" className="flex justify-evenly">
-            {steps.map((step, index)=>(
-
-                currentStep >= index ? 
-
-                     <li className=" text-mantas-300" key={step.id}>
-                        Du er på {step.id}, {step.name}
-                    </li>
-                    :
-                         <li className="" key={step.id}>
-                        Du er på {step.id}, {step.name}
-                    </li>
-            ))}
-        </ul>
+    <div className=" bg-mantas-100 rounded-2xl shadow-lg p-10 m-5 grid gap-10 ">
 
                 {steps[currentStep].content}
 
         
-       
-
+                <div className="flex items-center">
+    {steps.map((step, index) => (
+        <>
+            <motion.li 
+                key={step.id} 
+                className={`list-none p-4 rounded-full`}
+                animate={{ backgroundColor: currentStep >= index ? '#44BDEE' : '#8893A8' }}
+            >
+                
+            </motion.li>
+            {index < steps.length - 1 && 
+                <motion.div 
+                    className={`h-1 flex-grow `}
+                    animate={{ backgroundColor: currentStep > index ? '#44BDEE' : '#8893A8' }}
+                ></motion.div>
+            }
+        </>
+    ))}
+</div>
+        <div>
         {currentStep === 0 ? <Button desc="left"/>:  <Button desc="left" setCurrentStep={setCurrentStep} currentStep={currentStep}/>}
 
         {currentStep === 4 ? <Button desc="right" /> : <Button desc="right" setCurrentStep={setCurrentStep} currentStep={currentStep}/>
 }
-
+        </div>
 
     </div>
   )

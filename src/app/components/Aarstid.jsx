@@ -1,9 +1,15 @@
-import Image from "next/image";
+"use client";
 
+import Image from "next/image";
+import { color, motion } from "framer-motion"
 export default function Aarstid(props) {
   return (
-    <div className="grid grid-cols-2  gap-4 ">
-        <button onClick={()=>props.setAarstid(props.aarstid)}  className="transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 hover:bg-mantas-200 duration-200 ... flex flex-col items-center justify-around ">
+        <motion.button 
+        
+        whileHover={{ scale: 1.2 }}
+        whileTap={{ scale: 1 }}
+        
+        onClick={()=>props.setAarstid(props.aarstid)}  className=" flex flex-col items-center justify-around ">
           <Image
             className="h-28 md:h-28 rounded-full p-4 bg-matas-200"
             src="/next.svg" // Assuming next.svg is in the public directory
@@ -12,7 +18,7 @@ export default function Aarstid(props) {
             alt="paco"
             />
             <h2 className="text-center"> {props.aarstid}</h2>
-        </button>
-    </div>
+
+        </motion.button>
         )
 }

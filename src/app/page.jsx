@@ -31,8 +31,7 @@ export default async function Home() {
       return(
         <main className="h-full w-full flex justify-center items-center">
         
-        <FormSteps data={data} />
-        {/* <Step1 data={data}  genders={genders}/> */}
+        <FormSteps data={data} className="h-4/5 w-4/5"/>
 
     </main>
 )}
