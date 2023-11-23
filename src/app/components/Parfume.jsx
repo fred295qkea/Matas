@@ -10,6 +10,7 @@ export default function Parfume(props) {
     const handleClick = () => {
       setClicked(!clicked);
       props.setType(props.gender);
+      props.setFinalId("");
     };
   return (
         <motion.button 
