@@ -1,7 +1,7 @@
 import Aarstid from "./Aarstid"
 
 export default function Step2(props) {
-    let aarstider = ["summer", "winter", "autumn", "fall"];
+    let aarstider = ["summer", "winter", "spring", "fall"];
 
     return(
         <>
