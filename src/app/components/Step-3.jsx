@@ -7,8 +7,7 @@ export default function Step3(props) {
         <>
             <section  className="grid gap-10">
             <h3 className="text-center">Hvilket billede tiltaler dig mest</h3>
-            
-            <div className="flex justify-around items-center gap-5 m-8 flex-wrap">
+            {console.log(props.doneData)}
             {props.doneData.map((single)=>(
             
            
@@ -29,7 +28,6 @@ export default function Step3(props) {
             
            
             ))}
-            </div>
             </section>
 
 
