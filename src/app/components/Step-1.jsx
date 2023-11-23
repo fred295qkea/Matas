@@ -7,7 +7,7 @@ let genders = ["men","women","unisex"];
         <h1 className="text-center">Hvem er det til ?</h1>
          <div className="flex justify-around items-center gap-6 m-8 flex-wrap"> 
         {genders.map((gender)=>(
-            <Parfume key={gender} setType={props.setType} gender={gender}/> 
+            <Parfume key={gender} setType={props.setType} type={props.type} gender={gender}/> 
         ))}
          </div> 
         </section>

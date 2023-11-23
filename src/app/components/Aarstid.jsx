@@ -11,10 +11,10 @@ export default function Aarstid(props) {
         
         onClick={()=>props.setAarstid(props.aarstid)}  className=" flex flex-col items-center justify-around ">
           <Image
-            className="h-28 md:h-28 rounded-full p-4 bg-matas-200"
+            className={`h-1/2 w-1/2 md:h-3/4 md:w-3/4 lg:h-full lg:w-full bg-matas-200 ${props.stateAarstid===props.aarstid && "outline outline-mantas-300 outline-4"}`}
             src="/next.svg" // Assuming next.svg is in the public directory
-            width={100}
-            height={100}
+            width={150}
+            height={150}
             alt="paco"
             />
             <h2 className="text-center"> {props.aarstid}</h2>

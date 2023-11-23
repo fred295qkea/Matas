@@ -1,5 +1,5 @@
 import React from "react"
-
+import Image from "next/image"
 
 export default function Step3(props) {
 
@@ -12,9 +12,15 @@ export default function Step3(props) {
             {props.doneData.map((single)=>(
             
            
-             <button  key={single.id} onClick={()=>props.setFinalId(single.id)} >
-                    <p>{single.id}</p>
-                    <img  width="200px"  src={"/scent-profiles/"+single.vibeimg}/>
+             <button className="flex justify-center" key={single.id} onClick={()=>props.setFinalId(single.id)} >
+                    
+                    <Image
+                        className={` h-1/2 w-1/2 md:h-3/4 md:w-3/4 lg:h-full lg:w-full  rounded-xl  bg-matas-200 ${props.finalId===single.id && "outline outline-mantas-300 outline-4"}`}
+                        src={"/scent-profiles/"+single.vibeimg}// Assuming next.svg is in the public directory
+                        width={150}
+                        height={150}
+                        alt="paco"
+            />
                 </button>
           
                
